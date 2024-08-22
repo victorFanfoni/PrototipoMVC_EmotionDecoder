@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/editTextTextEmailAddress"
+        android:layout_width="750dp"
+        android:layout_height="60dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="244dp"
+        android:layout_marginEnd="50dp"
+        android:ems="10"
+        android:hint="Email"
+        android:inputType="textEmailAddress" />
+
+    <EditText
+        android:id="@+id/editTextTextPassword"
+        android:layout_width="750dp"
+        android:layout_height="78dp"
+        android:layout_below="@+id/editTextTextEmailAddress"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="99dp"
+        android:layout_marginEnd="50dp"
+        android:ems="10"
+        android:hint="Password"
+        android:inputType="textPassword" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="252dp"
+        android:layout_height="91dp"
+        android:layout_below="@+id/editTextTextPassword"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="275dp"
+        android:layout_marginTop="354dp"
+        android:layout_marginEnd="273dp"
+        android:layout_marginBottom="353dp"
+        android:text="Button" />
+</RelativeLayout>
