@@ -25,6 +25,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".ui.view.CreateAccount" />
+        <activity android:name=".ui.view.ResetPasswordActivity" />
+        <activity android:name=".ui.view.EmotionalScreening" />
+        <activity android:name=".ui.view.ResultScreen" />
+        <activity android:name=".ui.view.Login" />
+        <activity android:name=".ui.controller.ResetPasswordController" />
+        <activity android:name=".ui.controller.EmotionalScreeningController" />
+        <activity android:name=".ui.controller.ResultScreenController" />
+
     </application>
 
 </manifest>

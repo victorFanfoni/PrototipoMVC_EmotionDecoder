@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "392439524231",
+    "project_id": "prototipomvcemotiondecoder",
+    "storage_bucket": "prototipomvcemotiondecoder.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:392439524231:android:ee2eece5dce8dd18b24122",
+        "android_client_info": {
+          "package_name": "br.fiap.prototipomvcemotiondecoder"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDtGnq74Elm4pZ_I4DHmk-DTLNUO2csaAE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

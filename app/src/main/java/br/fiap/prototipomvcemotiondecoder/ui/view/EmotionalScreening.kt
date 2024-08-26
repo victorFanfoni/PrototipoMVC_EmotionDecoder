@@ -1,13 +1,21 @@
 package br.fiap.prototipomvcemotiondecoder.ui.view
 
 import android.os.Bundle
+import android.widget.Button
+import android.widget.EditText
+import android.widget.RadioButton
 import androidx.activity.ComponentActivity
 import br.fiap.prototipomvcemotiondecoder.R
 import br.fiap.prototipomvcemotiondecoder.ui.controller.EmotionalScreeningController
+import br.fiap.prototipomvcemotiondecoder.ui.model.EmotionModel
 
 class EmotionalScreening : ComponentActivity() {
 
     private lateinit var controller: EmotionalScreeningController
+    private lateinit var radioAlegria: RadioButton
+    private lateinit var radioTristeza: RadioButton
+    private lateinit var radioRaiva: RadioButton
+    private lateinit var radioMedo: RadioButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -15,19 +23,26 @@ class EmotionalScreening : ComponentActivity() {
 
         controller = EmotionalScreeningController(this)
 
-        button_enviar.setOnClickListener {
+        val buttonEnviar = findViewById<Button>(R.id.button_enviar)
+        val editComentarios = findViewById<EditText>(R.id.edit_comentarios)
+        radioAlegria = findViewById(R.id.radio_alegria)
+        radioTristeza = findViewById(R.id.radio_tristeza)
+        radioRaiva = findViewById(R.id.radio_raiva)
+        radioMedo = findViewById(R.id.radio_medo)
+
+        buttonEnviar.setOnClickListener {
             val selectedEmotion = getSelectedEmotion()
-            val comments = edit_comentarios.text.toString()
+            val comments = editComentarios.text.toString()
             controller.handleEmotionSelection(selectedEmotion, comments)
         }
     }
 
     private fun getSelectedEmotion(): String {
         return when {
-            radio_alegria.isChecked -> EmotionModel.EMOTION_HAPPY
-            radio_tristeza.isChecked -> EmotionModel.EMOTION_SAD
-            radio_raiva.isChecked -> EmotionModel.EMOTION_ANGER
-            radio_medo.isChecked -> EmotionModel.EMOTION_FEAR
+            radioAlegria.isChecked -> EmotionModel.EMOTION_HAPPY
+            radioTristeza.isChecked -> EmotionModel.EMOTION_SAD
+            radioRaiva.isChecked -> EmotionModel.EMOTION_ANGER
+            radioMedo.isChecked -> EmotionModel.EMOTION_FEAR
             else -> ""
         }
     }

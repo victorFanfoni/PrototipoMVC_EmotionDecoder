@@ -7,7 +7,7 @@ import br.fiap.prototipomvcemotiondecoder.R
 import br.fiap.prototipomvcemotiondecoder.ui.model.EmotionModel
 import br.fiap.prototipomvcemotiondecoder.ui.view.ResultScreen
 
-class EmotionController(private val context: Context) {
+class EmotionalScreeningController(private val context: Context) {
 
     private val model = EmotionModel()
 
@@ -19,7 +19,7 @@ class EmotionController(private val context: Context) {
 
             startResultScreen(completeReport)
         } else {
-            displayToast(context.toString(),"Preencha todos os campos")
+            displayToast("Preencha todos os campos")
         }
     }
 
@@ -34,7 +34,7 @@ class EmotionController(private val context: Context) {
         context.startActivity(intent)
     }
 
-    private fun displayToast(message: String, s: String) {
+    private fun displayToast(message: String) {
         Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
     }
 }

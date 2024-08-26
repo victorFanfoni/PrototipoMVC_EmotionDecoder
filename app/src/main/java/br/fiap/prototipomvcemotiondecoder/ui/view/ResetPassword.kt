@@ -17,8 +17,8 @@ class ResetPasswordActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_reset_password)
 
-        emailEditText = findViewById(R.id.emailEditText)
-        resetPasswordButton = findViewById(R.id.resetPasswordButton)
+        emailEditText = findViewById(R.id.edit_email)
+        resetPasswordButton = findViewById(R.id.buttonResetPassword)
 
         resetPasswordButton.setOnClickListener {
             val email = emailEditText.text.toString()

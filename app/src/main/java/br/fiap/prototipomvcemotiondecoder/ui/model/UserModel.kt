@@ -1,23 +1,37 @@
 package br.fiap.prototipomvcemotiondecoder.ui.model
 
-open class UserModel(
-    var name: String = "",
-    var email: String = "",
-    var password: String = ""
-) {
+import android.os.Parcel
+import android.os.Parcelable
 
-    // Sobrescrevendo o método toString para facilitar a depuração
-    override fun toString(): String {
-        return "UserModel(name='$name', email='$email')"
+class UserModel(var email: String = "", var password: String = "") : Parcelable {
+
+    fun isValid(): Boolean {
+        // Verifica se o email e a senha são válidos
+        return email.isNotBlank() && password.isNotBlank()
     }
 
-    // Métodos adicionais que podem ser úteis
-    fun updatePassword(newPassword: String) {
-        password = newPassword
+    // Parcelable Implementation
+    override fun writeToParcel(parcel: Parcel, flags: Int) {
+        parcel.writeString(email)
+        parcel.writeString(password)
     }
 
-    fun isPasswordValid(): Boolean {
-        // Adicione sua lógica de validação de senha aqui
-        return password.length >= 6
+    override fun describeContents(): Int {
+        return 0
     }
+
+    companion object CREATOR : Parcelable.Creator<UserModel> {
+        override fun createFromParcel(parcel: Parcel): UserModel {
+            return UserModel(parcel)
+        }
+
+        override fun newArray(size: Int): Array<UserModel?> {
+            return arrayOfNulls(size)
+        }
+    }
+
+    private constructor(parcel: Parcel) : this(
+        parcel.readString() ?: "",
+        parcel.readString() ?: ""
+    )
 }

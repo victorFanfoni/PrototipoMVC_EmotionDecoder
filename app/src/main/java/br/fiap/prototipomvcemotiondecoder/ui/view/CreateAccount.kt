@@ -1,45 +1,44 @@
 package br.fiap.prototipomvcemotiondecoder.ui.view
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
-import android.widget.Toast
+import android.widget.TextView
 import androidx.activity.ComponentActivity
 import br.fiap.prototipomvcemotiondecoder.R
+import br.fiap.prototipomvcemotiondecoder.ui.controller.CreateAccountController
+import br.fiap.prototipomvcemotiondecoder.ui.view.Login
 
-class CreateAccount: ComponentActivity() {
+class CreateAccount : ComponentActivity() {
 
-    @SuppressLint("MissingInflatedId")
+    private lateinit var controller: CreateAccountController
+
+    @SuppressLint("WrongViewCast")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_create_account)
 
-        val email = findViewById<EditText>(R.id.editTextTextEmailAddress)
-        val senha = findViewById<EditText>(R.id.editTextTextPassword)
-        val confirmaSenha = findViewById<EditText>(R.id.editTextTextPasswordCheck)
-        val button = findViewById<Button>(R.id.button2)
+        controller = CreateAccountController(this)
 
-        button.setOnClickListener {
-            val email = email.text.toString()
-            val senha = senha.text.toString()
-            val confirmaSenha = confirmaSenha.text.toString()
+        val emailEditText = findViewById<EditText>(R.id.editTextEmail)
+        val senhaEditText = findViewById<EditText>(R.id.editTextSenha)
+        val confirmaSenhaEditText = findViewById<EditText>(R.id.editTextConfirmarSenha)
+        val createAccountButton = findViewById<Button>(R.id.buttonCriarConta)
+        val voltarLoginButton = findViewById<TextView>(R.id.VoltaLogin)
 
-            if (email.isNotEmpty() && senha.isNotEmpty()){
-                Toast.makeText(this, "Preencha todos os campos", Toast.LENGTH_SHORT).show()
-            }
-            if (!email.contains("@")){
-                Toast.makeText(this, "Email inválido", Toast.LENGTH_SHORT).show()
-            }
-            else if (senha != confirmaSenha){
-                Toast.makeText(this, "As senhas não coincidem", Toast.LENGTH_SHORT).show()
-            }
-            else{
-                Toast.makeText(this, "Conta criada com sucesso", Toast.LENGTH_SHORT).show()
-
-            }
+        createAccountButton.setOnClickListener {
+            val email = emailEditText.text.toString().trim()
+            val senha = senhaEditText.text.toString().trim()
+            val confirmaSenha = confirmaSenhaEditText.text.toString().trim()
+            controller.createAccount(email, senha, confirmaSenha)
         }
 
+        voltarLoginButton.setOnClickListener {
+            val intent = Intent(this, Login::class.java)
+            startActivity(intent)
+            finish()
+        }
     }
-
 }

@@ -1,47 +1,138 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/dark_cyan_green">
 
-    <EditText
-        android:id="@+id/editTextTextEmailAddress"
-        android:layout_width="750dp"
-        android:layout_height="60dp"
-        android:layout_alignParentStart="true"
+
+    <View
+        android:id="@+id/conteirerTop"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="244dp"
-        android:layout_marginEnd="50dp"
-        android:ems="10"
-        android:hint="Email"
-        android:inputType="textEmailAddress" />
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="0dp"
+        android:background="@drawable/backgroud_view_top" />
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_alignStart="@+id/conteirerTop"
+        android:layout_alignTop="@+id/conteirerTop"
+        android:layout_alignEnd="@+id/conteirerTop"
+        android:layout_alignBottom="@+id/conteirerTop"
+        android:layout_marginTop="11dp"
+        android:layout_marginEnd="229dp"
+        android:layout_marginBottom="39dp"
+        android:contentDescription="@string/Logo"
+        android:src="@drawable/emotiondecoder" />
 
     <EditText
-        android:id="@+id/editTextTextPassword"
-        android:layout_width="750dp"
-        android:layout_height="78dp"
-        android:layout_below="@+id/editTextTextEmailAddress"
+        android:id="@+id/edit_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/conteirerTop"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="20dp"
+        android:autofillHints="emailAddress"
+        android:background="@drawable/background_edittext"
+        android:backgroundTint="#FFFFFF"
+        android:drawableEnd="@drawable/ic_email"
+        android:hint="@string/e_mail"
+        android:inputType="textEmailAddress"
+        android:maxLines="1"
+        android:padding="15dp"
+        android:textColor="@color/black"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/edit_senha"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edit_email"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="20dp"
+        android:autofillHints="password"
+        app:passwordToggleDrawable="@drawable/baseline_remove_red_eye_24"
+        app:passwordToggleEnabled="true"
+        app:passwordToggleTint="@color/black"
+        android:background="@drawable/background_edittext"
+        android:backgroundTint="#FFFFFF"
+        android:hint="@string/digite_sua_senha"
+        android:inputType="textPassword"
+        android:padding="15dp"
+        android:textColor="@color/black" />
+
+    <TextView
+        android:id="@+id/button_criar_conta"
+        android:layout_width="188dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button_entrar"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="99dp"
-        android:layout_marginEnd="50dp"
-        android:ems="10"
-        android:hint="Password"
-        android:inputType="textPassword" />
+        android:layout_marginStart="119dp"
+        android:layout_marginTop="22dp"
+        android:layout_marginEnd="102dp"
+        android:gravity="center_horizontal"
+        android:text="@string/nao_tem_conta_criar"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        android:textStyle="bold"/>
 
     <Button
-        android:id="@+id/button"
-        android:layout_width="252dp"
-        android:layout_height="91dp"
-        android:layout_below="@+id/editTextTextPassword"
-        android:layout_alignParentStart="true"
+        android:id="@+id/button_entrar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView4"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="37dp"
+        android:layout_marginEnd="48dp"
+        android:background="@drawable/button_comecar"
+        android:text="@string/entrar" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="wrap_content"
+        android:layout_height="64dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="275dp"
-        android:layout_marginTop="354dp"
-        android:layout_marginEnd="273dp"
-        android:layout_marginBottom="353dp"
-        android:text="Button" />
+        android:layout_marginEnd="0dp"
+        android:background="@drawable/backgroud_view_bottom" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="130dp"
+        android:layout_height="113dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="52dp"
+        android:layout_marginEnd="81dp"
+        android:text="@string/seja_bem_vindo_n_ao_emotiondecoder"
+        android:textColor="#040303"
+        android:textSize="14sp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edit_senha"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="278dp"
+        android:shadowDx="-2"
+        android:shadowDy="-2"
+        android:shadowRadius="1"
+        android:text="@string/redefinir_senha"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+
 </RelativeLayout>

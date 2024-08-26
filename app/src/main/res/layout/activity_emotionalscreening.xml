@@ -1,6 +1,114 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/dark_cyan_green">
+
+    <View
+        android:id="@+id/conteirerTop"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@drawable/backgroud_view_top" />
+
+    <TextView
+        android:id="@+id/text_pergunta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/conteirerTop"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="34dp"
+        android:layout_marginEnd="66dp"
+        android:text="@string/como_voc_est_se_sentindo_agora"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"/>
+
+    <RadioGroup
+        android:id="@+id/radio_group_emocoes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView3"
+        android:layout_alignParentEnd="true"
+         android:layout_marginStart="20dp"
+        android:layout_marginTop="74dp"
+        android:layout_marginEnd="20dp"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/radio_alegria"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/feliz" />
+
+        <RadioButton
+            android:id="@+id/radio_tristeza"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/triste" />
+
+        <RadioButton
+            android:id="@+id/radio_raiva"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/raiva" />
+
+        <RadioButton
+            android:id="@+id/radio_medo"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="20dp"
+            android:text="@string/medo" />
+
+    </RadioGroup>
+
+    <EditText
+        android:id="@+id/edit_comentarios"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/radio_group_emocoes"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="97dp"
+        android:layout_marginEnd="20dp"
+        android:autofillHints="comentarioEmocao"
+        android:background="@drawable/background_edittext"
+        android:backgroundTint="#FFFFFF"
+        android:hint="@string/coment_rios_adicionais_opcional"
+        android:inputType="text"
+        android:maxLines="1"
+        android:padding="15dp"
+        android:textColor="@color/black"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/button_enviar"
+        android:layout_width="145dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edit_comentarios"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="137dp"
+        android:layout_marginTop="180dp"
+        android:layout_marginEnd="129dp"
+        android:background="@drawable/button_comecar"
+        android:text="@string/enviar" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="276dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/conteirerTop"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="63dp"
+        android:shadowDx="-2"
+        android:shadowDy="-2"
+        android:shadowRadius="1"
+        android:text="@string/como_voce_esta_sentindo_agora"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
 </RelativeLayout>
