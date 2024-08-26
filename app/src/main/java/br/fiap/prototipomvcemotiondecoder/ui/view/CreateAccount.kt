@@ -9,7 +9,6 @@ import android.widget.TextView
 import androidx.activity.ComponentActivity
 import br.fiap.prototipomvcemotiondecoder.R
 import br.fiap.prototipomvcemotiondecoder.ui.controller.CreateAccountController
-import br.fiap.prototipomvcemotiondecoder.ui.view.Login
 
 class CreateAccount : ComponentActivity() {
 

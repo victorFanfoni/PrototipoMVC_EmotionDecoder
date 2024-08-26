@@ -7,9 +7,9 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import androidx.activity.ComponentActivity
-import br.fiap.prototipomvcemotiondecoder.R
 import br.fiap.prototipomvcemotiondecoder.ui.controller.LoginController
 import br.fiap.prototipomvcemotiondecoder.ui.model.UserModel
+import br.fiap.prototipomvcemotiondecoder.R
 
 class Login : ComponentActivity() {
 

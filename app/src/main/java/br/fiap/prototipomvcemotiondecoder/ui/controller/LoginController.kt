@@ -3,7 +3,6 @@ package br.fiap.prototipomvcemotiondecoder.ui.controller
 import android.content.Context
 import android.content.Intent
 import android.widget.Toast
-import androidx.core.content.ContextCompat.startActivity
 import br.fiap.prototipomvcemotiondecoder.ui.model.FirebaseAuthProvider
 import br.fiap.prototipomvcemotiondecoder.ui.model.UserModel
 import br.fiap.prototipomvcemotiondecoder.ui.view.EmotionalScreening
